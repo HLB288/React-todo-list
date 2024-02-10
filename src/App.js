@@ -4,11 +4,11 @@ import { useState,useEffect} from 'react'
 function App() {
   const [todos, setTodos] = useState([])
   useEffect(() => {
-  const storedTodos = JSON.parse(localStorage.getItem('todos'))
-  if (storedTodos && storedTodos.length > 0)  {
-    setTodos(storedTodos)
-  }
-}, [todos])
+    const storedTodos = JSON.parse(localStorage.getItem('todos'))
+    if (storedTodos && storedTodos.length > 0)  {
+      setTodos(storedTodos)
+    }
+  }, [todos])
 
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos))
